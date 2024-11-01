@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-pink-lighter dark:bg-pink-dark text-gray-900 dark:text-white">
-      <AnimatePresence></AnimatePresence>
+      <AnimatePresence>
         {loading ? (
           <motion.div
             key="loader"
