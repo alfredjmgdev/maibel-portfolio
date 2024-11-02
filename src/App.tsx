@@ -11,6 +11,7 @@ import Loader from './components/Loader'
 
 function App() {
   const [loading, setLoading] = useState(true)
+  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
     // Simulate loading time
@@ -18,8 +19,17 @@ function App() {
     return () => clearTimeout(timer)
   }, [])
 
+  useEffect(() => {
+    // Apply dark mode class to html element
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [darkMode])
+
   return (
-    <div className="min-h-screen bg-pink-lighter dark:bg-pink-dark text-gray-900 dark:text-white">
+    <div className="min-h-screen bg-pink-lighter dark:bg-pink-dark text-pink-dark dark:text-pink-lighter">
       <AnimatePresence>
         {loading ? (
           <motion.div
@@ -37,7 +47,7 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <Header />
+            <Header darkMode={darkMode} setDarkMode={setDarkMode} />
             <main>
               <Hero />
               <About />

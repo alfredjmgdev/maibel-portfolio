@@ -17,7 +17,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-pink-medium">
+    <section id="projects" className="py-20 bg-white dark:bg-pink-deep">
       <div className="container mx-auto px-6">
         <motion.h2
           className="text-3xl font-semibold text-center mb-8"
@@ -31,13 +31,13 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="bg-pink-lighter dark:bg-pink-deep rounded-lg p-6 shadow-md"
+              className="bg-pink-lighter dark:bg-pink-medium rounded-lg p-6 shadow-md"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
+              <h3 className="text-pink-deep dark:text-pink-lighter">{project.title}</h3>
+              <p className="text-pink-medium dark:text-pink-light">{project.description}</p>
             </motion.div>
           ))}
         </div>

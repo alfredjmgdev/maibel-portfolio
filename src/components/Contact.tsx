@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-pink-lighter dark:bg-pink-deep">
+    <section id="contact" className="py-20 bg-white dark:bg-pink-deep">
       <div className="container mx-auto px-6">
         <motion.h2
           className="text-3xl font-semibold text-center mb-8"
@@ -20,7 +20,7 @@ const Contact = () => {
         >
           <div className="mb-4">
             <label htmlFor="name" className="block mb-2">Name</label>
-            <input type="text" id="name" name="name" className="w-full p-2 border rounded" required />
+            <input type="text" id="name" name="name" className="w-full p-2 border rounded bg-pink-lighter dark:bg-pink-medium text-pink-dark dark:text-white" required />
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block mb-2">Email</label>
